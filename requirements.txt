@@ -1,3 +1,4 @@
 dotenv
 agno
 pip
+groq

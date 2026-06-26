@@ -1,12 +1,15 @@
 from textwrap import dedent
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from agno.agent import Agent
 from agno.models.openai import OpenAIResponses
 from agno.tools.youtube import YouTubeTools
 from agno.models.groq import Groq
+import streamlit as st
 
 
-load_dotenv()
+st.secrets("GROQ_API_KEY")
+
+# load_dotenv()
 
 def build_youtube_agent():
     return Agent(

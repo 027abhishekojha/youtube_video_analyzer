@@ -9,13 +9,12 @@ from agno.agent import Agent
 from agno.models.groq import Groq
 import streamlit as st
 
-st.secrets("GROQ_API_KEY")
+st.secrets["GROQ_API_KEY"]
 
 def build_youtube_agent():
     return Agent(
     name="YouTube Agent",
     model=Groq(id="llama-3.1-8b-instant"),
-    tools=[YouTubeTools()],
     instructions=dedent("""\
         You are an expert YouTube content analyst with a keen eye for detail! 🎓
         Follow these steps for comprehensive video analysis:

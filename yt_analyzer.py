@@ -8,7 +8,8 @@ from agno.models.groq import Groq
 
 load_dotenv()
 
-youtube_agent = Agent(
+def build_youtube_agent():
+    return Agent(
     name="YouTube Agent",
     model=Groq(id="llama-3.1-8b-instant"),
     tools=[YouTubeTools()],
@@ -54,7 +55,7 @@ youtube_agent = Agent(
 )
 
 # Example usage with different types of videos
-youtube_agent.print_response(
-    "Analyze this video: https://youtu.be/mG4SmhWyeFA?si=HB7O5ywqVnhq16j9",
-    stream=True,
-)
+# youtube_agent.print_response(
+#     "Analyze this video: https://youtu.be/mG4SmhWyeFA?si=HB7O5ywqVnhq16j9",
+#     stream=True,
+# )
